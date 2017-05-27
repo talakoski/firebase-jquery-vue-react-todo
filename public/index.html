@@ -19,81 +19,52 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
     <link rel="shortcut icon" href="images/favicon.png">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
-    <link rel="stylesheet" href="styles.css">
-    <style>
-      #view-source {
-        position: fixed;
-        display: block;
-        right: 0;
-        bottom: 0;
-        margin-right: 40px;
-        margin-bottom: 40px;
-        z-index: 900;
-      }
-    </style>
+    <script src="js/todo-jquery.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
   </head>
 
   <body>
     <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+
       <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">Material Design Lite</span>
-          <div class="mdl-layout-spacer"></div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search">
-              <label class="mdl-textfield__label" for="search">Enter your query...</label>
-            </div>
-          </div>
         </div>
       </header>
+
       <div class="demo-ribbon"></div>
+
       <main class="demo-main mdl-layout__content">
         <div class="demo-container mdl-grid">
           <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-            <div class="demo-crumbs mdl-color-text--grey-500">
-              Google &gt; Material Design Lite &gt; How to install MDL
-            </div>
-            <h3>How to install MDL</h3>
-            <p>
-              Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor. Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud
-              Lorem occaecat sunt. Eiusmod quis amet ullamco aliquip dolore ut incididunt duis adipisicing. Elit consequat nisi eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet ex dolore consectetur aliqua elit.
-            </p>
 
-            <p id="load">Firebase SDK Loading&hellip;</p>
+            <h3>TODOs</h3>
 
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-                // // The Firebase SDK is initialized and available here!
-                //
-                // firebase.auth().onAuthStateChanged(user => { });
-                // firebase.database().ref('/path/to/ref').on('data', snapshot => { });
-                // firebase.messaging().requestPermission().then(() => { });
-                // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-                //
-                // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            <ul id="list-todo" class="demo-list-icon mdl-list">
+            </ul>
 
-                try {
-                  let app = firebase.app();
-                  let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-                  document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-                } catch (e) {
-                  console.error(e);
-                  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-                }
-              });
-            </script>
+
+            <form id="form-todo" action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="todo">
+                <label class="mdl-textfield__label" for="todo">To do...</label>
+                <span id="error" class="mdl-textfield__error">Error happened</span>
+              </div>
+              <br>
+              <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Add
+              </button>
+            </form>
 
           </div>
         </div>
@@ -108,8 +79,6 @@
         </footer>
       </main>
     </div>
-    <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/article/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
-    <script src="$$hosted_libs_prefix$$/$$version$$/material.min.js"></script>
   </body>
 
 </html>
