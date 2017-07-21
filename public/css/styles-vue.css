@@ -1,0 +1,7 @@
+
+.todo-list-leave-active {
+  transition: opacity 0.4s
+}
+.todo-list-leave-to {
+  opacity: 0
+}

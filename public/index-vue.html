@@ -34,6 +34,7 @@
     <script src="js/todo-vue.js"></script>
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles-vue.css">
   </head>
 
   <body>
@@ -55,8 +56,8 @@
             <h3>TODOs</h3>
 
             <div id="app">
-              <ul>
-                <li class="mdl-list__item" v-for="todo in todos">
+              <transition-group name="todo-list" tag="ul">
+                <li class="mdl-list__item" v-for="todo in todos" v-bind:key="todo">
                   <span class="mdl-list__item-primary-content">
                   <i class = "material-icons mdl-list__item-icon"> check_circle </i>
                     {{ todo.todo }}
@@ -65,7 +66,7 @@
                     <i class="material-icons">delete_forever</i>
                   </a>
                 </li>
-              </ul>
+              </transition-group>
 
               <form id="form" v-on:submit.prevent="addTodo">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
