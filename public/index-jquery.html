@@ -48,9 +48,24 @@
           <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 
-            <a href="index-jquery.html">Todo with jQuery</a>
-            <br>
-            <a href="index-vue.html">Todo with Vue</a>
+            <h3>TODOs</h3>
+
+            <ul id="list-todo" class="demo-list-icon mdl-list">
+            </ul>
+
+
+            <form id="form-todo" action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="todo">
+                <label class="mdl-textfield__label" for="todo">To do...</label>
+                <span id="error" class="mdl-textfield__error">Error happened</span>
+              </div>
+              <br>
+              <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Add
+              </button>
+            </form>
+
           </div>
         </div>
         <footer class="demo-footer mdl-mini-footer">
